@@ -23,7 +23,7 @@ namespace RegularExpressions
             string date = Console.ReadLine();
             Console.WriteLine("\n" + validateDate(date));
 
-            Console.Write("\t Please enter a valid HTML element: ");
+            Console.Write("\n Please enter a valid HTML element: ");
             string html = Console.ReadLine();
             Console.WriteLine("\n" + validateHtml(html));
         }
@@ -83,7 +83,7 @@ namespace RegularExpressions
         //HTML Test <p>..<p>
         public static string validateHtml(string html)
         {
-            Regex rg = new Regex("<\\s*([^ >]+)[^>]*>.*?<\\s*\\s*\\1\\s*>$");
+            Regex rg = new Regex("<\\s*([^ >]+)[^>]*>.*?</\\s*\\s*\\1\\s*>$");
 
             if (rg.Match(html).Success)
             {
